@@ -1,5 +1,4 @@
 var maxLength;
-var getRandomNumberArray = [];
 $("#btn-submit").on('click', function () {
     var userMax = parseInt($('#max-row').val());
     maxLength = parseInt($('#max-valude').val());
@@ -16,13 +15,13 @@ $("#btn-submit").on('click', function () {
 });
 
 $('#btn-result').on('click', function () {
-    localStorage.setItem("storageArray", getRandomNumberArray);
     localStorage.setItem("storageMax", maxLength);
     window.location.replace("file:///var/www/bingo/result.html");
 });
 
 function random(max, boxitem) {
     var number = [];
+    var getRandomNumberArray = [];
     for (var i = 1; i <= max; i++) {
         number.push(i);
     }
@@ -33,14 +32,15 @@ function random(max, boxitem) {
         getRandomNumberArray.push(number[random]);
         number.splice(random, 1);
 
-    }
-    ;
+    };
 
-    console.log(getRandomNumberArray);
     $.each(getRandomNumberArray, function (index, value) {
         let tagInsert = '.box' + boxitem;
         $(tagInsert).append(' <div class="item">\n' +
             '                \n' + value +
             '            </div>');
+        if (index===0){
+            localStorage.setItem("storageArray", getRandomNumberArray);
+        }
     });
 }
