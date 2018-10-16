@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="header">
+    <ul>
+        <li>
+            <img src="image/logo.png" alt="logo">
+        </li>
+        <li>
+            <h1>Bingo</h1>
+        </li>
+
+        <li class="form">
+            <button class="button-submit btn-random" id="btn-number-random">
+                Random
+            </button>
+        </li>
+    </ul>
+</div>
+<div class="content">
+    <div>
+        <h1>99</h1>
+    </div>
+    <div class="result-box">
+    </div>
+</div>
+<script>
+</script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+    var arrayNumber = localStorage.getItem("storageArray").split(',');
+    var max = localStorage.getItem("storageMax");
+    var countArray = arrayNumber.length;
+    var time;
+    var countClick =0;
+    $("#btn-number-random").on('click', function () {
+        $(this).attr("disabled", true);
+        let obj = document.createElement("audio");
+        obj.src = "music/background-music.mp3";
+        obj.play();
+        $(this).css("background-color", "#3cf988");
+        let i = 0;
+        var random = 0;
+        countClick ++;
+        time = setInterval(function () {
+            i++;
+            if (i <81) {
+                random = Math.floor(Math.random() * max);
+                $(".content h1").text(random);
+            } else {
+               if (countClick>=82){
+                   alert("Game over");
+                   clearInterval(time);
+               } else {
+                   var randomIndex = Math.floor(Math.random() * countArray);
+                   $(".content h1").text(arrayNumber[randomIndex]);
+                   $('.result-box').append('<div class="item">'+arrayNumber[randomIndex]+'</div>');
+                   arrayNumber.splice(randomIndex, 1);
+                   countArray--;
+                   clearInterval(time);
+                   $("#btn-number-random").removeAttr('disabled').css({"background-color": "white", "color": "#696666"});
+                   obj.pause();
+               }
+            }
+        }, 80);
+    });
+
+</script>
+</body>
+</html>

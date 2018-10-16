@@ -1,0 +1,138 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Css header */
+
+.header ul {
+    list-style: none;
+    display: -webkit-box;
+    margin: 0;
+}
+
+.header {
+    background-image: linear-gradient(#066C34, #58943f);
+    height: 100%;
+}
+
+.header img {
+    width: 128px;
+    margin-top: 14px;
+}
+
+.header ul li {
+    margin-left: 2%;
+}
+
+.header {
+    color: white;
+}
+
+.button-submit {
+    font-weight: bold;
+    font-size: 23px;
+    border: 4px solid #3cf988;
+    border-radius: 23px;
+    padding-left: 27px;
+    padding-right: 27px;
+    background-color: white;
+    color: #696666;
+}
+
+.button-submit:hover {
+    color: #fff;
+    background-color: #3cf988;
+    border-color: #3cf988;
+    background-position: 0.75em bottom;
+    -webkit-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.header input {
+    width: 50%;
+    padding: 5px 13px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form {
+    margin-top: 18px;
+}
+
+.btn-run:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.btn-result:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.btn-random {
+    margin-left: 100%;
+}
+
+.btn-random {
+    margin-left: 184%;
+}
+
+/* End css header */
+
+/* Css content */
+
+.content {
+    border: 1px solid #b5acac;
+    height: 100%;
+    text-align: center;
+    width: 64%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.item {
+    float: left;
+    border: 1px solid red;
+    border-radius: 94px;
+    padding: 3px;
+    margin: 5px;
+    width: 28px;
+    height: 28px;
+    background-color: red;
+    font-size: 18px;
+    line-height: 26px;
+    color: white;
+    font-weight: bold;
+}
+
+.box {
+    margin: 7px;
+    width: 48%;
+    height: 436px;
+    border: 1px solid darkgrey;
+    float: left;
+}
+
+.content h1 {
+    font-size: 150px;
+    color: #ea1010;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.result-box {
+    height: 233px;
+    border: 3px solid coral;
+    width: 96%;
+    margin: auto;
+}
+
+/* End css content */

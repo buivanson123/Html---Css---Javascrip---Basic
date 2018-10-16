@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="header">
+    <ul>
+        <li>
+            <img src="image/logo.png" alt="logo">
+        </li>
+        <li>
+            <h1>Bingo</h1>
+        </li>
+        <li class="form">
+            <label for="max-valude">Random từ 81 đến: </label>
+            <input onkeyup="this.value=this.value.replace(/[^\d]/,'')" id="max-valude" value="81" maxlength="4" type="text">
+        </li>
+        <li class="form">
+            <label for="max-row">Số người chơi:</label>
+            <input type="text" onkeyup="this.value=this.value.replace(/[^\d]/,'')" id="max-row" value="1" maxlength="2"
+                   id="max-row">
+        </li>
+        <li class="form">
+            <button class="button-submit btn-run" id="btn-submit">
+                Run
+            </button>
+            <button class="button-submit btn-result" id="btn-result">
+                Result
+            </button>
+        </li>
+    </ul>
+</div>
+<div class="content">
+
+</div>
+<script>
+</script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
