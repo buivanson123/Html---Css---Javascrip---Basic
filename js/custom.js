@@ -26,7 +26,7 @@ function random(max, boxitem) {
         number.push(i);
     }
 
-    for (k = 1; k <= 81; k++) {
+    for (k = 1; k <= 25; k++) {
         let random = Math.floor(Math.random() * max);
         max--;
         getRandomNumberArray.push(number[random]);
@@ -36,9 +36,7 @@ function random(max, boxitem) {
 
     $.each(getRandomNumberArray, function (index, value) {
         let tagInsert = '.box' + boxitem;
-        $(tagInsert).append(' <div class="item">\n' +
-            '                \n' + value +
-            '            </div>');
+        $(tagInsert).append(' <div class="item">' + value + '</div>');
         if (index===0){
             localStorage.setItem("storageArray", getRandomNumberArray);
         }
