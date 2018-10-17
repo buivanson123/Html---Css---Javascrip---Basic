@@ -50,11 +50,11 @@
         countClick ++;
         time = setInterval(function () {
             i++;
-            if (i <81) {
+            if (i <2) {
                 random = Math.floor(Math.random() * max);
                 $(".content h1").text(random);
             } else {
-               if (countClick>=82){
+               if (countClick>=26){
                    alert("Game over");
                    clearInterval(time);
                } else {

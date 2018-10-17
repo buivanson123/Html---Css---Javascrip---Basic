@@ -2,8 +2,8 @@ var maxLength;
 $("#btn-submit").on('click', function () {
     var userMax = parseInt($('#max-row').val());
     maxLength = parseInt($('#max-valude').val());
-    if (userMax === 0 || maxLength === 0) {
-        alert('Ban can nhap so truoc khi choi');
+    if (userMax === 0 || maxLength === 0 || maxLength <25) {
+        alert('Ban can nhap so va lon hon 25 truoc khi choi');
     } else {
         $('.content').empty();
         for (var ii = 1; ii <= userMax; ii++) {
