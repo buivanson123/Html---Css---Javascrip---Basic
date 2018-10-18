@@ -6,10 +6,20 @@ $("#btn-submit").on('click', function () {
         alert('Ban can nhap so va lon hon 25 truoc khi choi');
     } else {
         $('.content').empty();
+        var count =4;
         for (var ii = 1; ii <= userMax; ii++) {
-            $('.content').append('    <div class="box box' + ii + '">\n' +
-                '    </div>');
-            random(maxLength, ii);
+        	if(ii ===count) {
+        		console.log('Lan 1 ii=:'+ii);
+        		count +=4;
+				$('.content').append('    <div class="print box box' + ii + '">\n' +
+					'    </div>');
+				random(maxLength, ii);
+			}else {
+				$('.content').append('    <div class="box box' + ii + '">\n' +
+					'    </div>');
+				random(maxLength, ii);
+			}
+
         }
     }
 });
