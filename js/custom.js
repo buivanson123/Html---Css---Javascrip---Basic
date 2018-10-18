@@ -36,7 +36,11 @@ function random(max, boxitem) {
 
     $.each(getRandomNumberArray, function (index, value) {
         let tagInsert = '.box' + boxitem;
-        $(tagInsert).append(' <div class="item">' + value + '</div>');
+        if(index === 12){
+			$(tagInsert).append(' <div class="item"></div>');
+		}else {
+			$(tagInsert).append(' <div class="item">' + value + '</div>');
+		}
         if (index===0){
             localStorage.setItem("storageArray", getRandomNumberArray);
         }
